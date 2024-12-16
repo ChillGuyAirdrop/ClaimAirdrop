@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solana Wallet Adresse</title>
+  <script src="https://cdn.jsdelivr.net/npm/@solana/web3.js@1.35.0/dist/solanaWeb3.min.js"></script>
+</head>
+<body>
+  <h1>Solana Token senden</h1>
+  <p>Bitte sende Solana-Token an die folgende Adresse:</p>
+  <p id="wallet-address">Deine Solana-Adresse: <strong>DEINE_SOLANA_WALLET_ADRESSE</strong></p>
+  <p>Scanne den QR-Code oder nutze den folgenden Link, um zu senden:</p>
+  <a href="https://www.sollet.io/?txid=&to=DEINE_SOLANA_WALLET_ADRESSE" target="_blank">Sende Token</a>
+  <div>
+    <canvas id="qr-code"></canvas>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <script>
+    // QR-Code erstellen, der die Solana-Adresse enthält
+    const solanaAddress = 'GWzZgL6Bd8omSvVHk2CpmVsrqZNTUmYJP1zVDKiwFeNJ'; // Ersetze dies mit deiner echten Solana-Adresse
+    const qrCodeElement = document.getElementById('qr-code');
+    
+    QRCode.toCanvas(qrCodeElement, solanaAddress, function (error) {
+      if (error) console.error(error);
+      console.log('QR-Code erfolgreich erstellt!');
+    });
+  </script>
+</body>
+</html>
